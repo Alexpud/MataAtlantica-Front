@@ -1,0 +1,163 @@
+:host {
+  display: inline;
+}
+
+.container {
+  display: grid;
+}
+
+/* ===== NAV SUPERIOR ===== */
+.nav-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #232f3e;
+  color: white;
+  padding: 0.75rem 1.5rem;
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #ffd814; /* amarelo tipo Amazon */
+}
+
+/* Barra de busca */
+.search-bar {
+  display: flex;
+  flex: 1;
+  max-width: 600px;
+  margin: 0 2rem;
+  background-color: white;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 0.6rem 1rem;
+  border: none;
+  font-size: 1rem;
+}
+
+.search-bar input:focus {
+  outline: none;
+}
+
+.search-bar button {
+  background-color: #febd69;
+  border: none;
+  padding: 0 1rem;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: background 0.2s;
+}
+
+.search-bar button:hover {
+  background-color: #f3a847;
+}
+
+/* Ícones do canto direito */
+.icons {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.icon-link {
+  color: white;
+  text-decoration: none;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.icon-link span {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .icon-link span {
+    display: inline;
+  }
+}
+
+/* ===== NAV INFERIOR ===== */
+.nav-bottom {
+  background-color: #37475a;
+  margin-bottom: 10px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0;
+}
+
+.nav-links li {
+  margin: 0.5rem 1rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #ffd814;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+.menu-toggle {
+  display: none;
+}
+
+.hamburger {
+  display: none;
+  background-color: #37475a;
+  color: white;
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .search-bar {
+    margin: 0 0.5rem;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #37475a;
+    text-align: center;
+    padding-bottom: 1rem;
+  }
+
+  .menu-toggle:checked + .hamburger + .nav-bottom .nav-links {
+    display: flex;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+
+/* ===== ANIMAÇÃO ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
